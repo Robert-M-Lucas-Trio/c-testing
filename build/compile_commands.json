@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/robert/Code/c-testing/build",
+  "command": "/run/current-system/sw/bin/gcc -g -o CMakeFiles/my_project.dir/src/main.c.o -c /home/robert/Code/c-testing/src/main.c",
+  "file": "/home/robert/Code/c-testing/src/main.c",
+  "output": "CMakeFiles/my_project.dir/src/main.c.o"
+}
+]
