@@ -1,3 +1,0 @@
-/home/robert/Code/c-testing/build/CMakeFiles/my_project.dir
-/home/robert/Code/c-testing/build/CMakeFiles/edit_cache.dir
-/home/robert/Code/c-testing/build/CMakeFiles/rebuild_cache.dir
