@@ -1,8 +1,5 @@
 # Example Module
 
-![Pasted image 20251121154531](attachments/Pasted%20image%2020251121154531.png)
-[main](../../main.c)
-
 ## 1. Headings
 ```markdown
 # H1
@@ -207,3 +204,20 @@ console.log("Hello, GitHub!");
 $$E = mc^2$$
 ```
 $$E = mc^2$$
+
+## 17. Callouts
+
+> [!NOTE]
+> This is a note. Use it for general information.
+
+> [!TIP]
+> This is a tip. Helpful advice or best practices go here.
+
+> [!IMPORTANT]
+> This is important. Critical information that must be read.
+
+> [!WARNING]
+> This is a warning. Indicates potential risks or issues.
+
+> [!CAUTION]
+> This is a caution. Advises careful handling or attention.
