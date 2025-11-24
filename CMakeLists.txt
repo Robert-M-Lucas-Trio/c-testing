@@ -10,16 +10,14 @@ add_executable(my_project
 
 # Add config.h
 target_include_directories(my_project PRIVATE config)
-set(CONFIG_FILE config.h)
+get_filename_component(CONFIG_FILE "config/config.h" ABSOLUTE)
 target_compile_options(my_project PRIVATE
     -include ${CONFIG_FILE}
 )
 
 set(MODULE_PATHS
-    "trio_main"
-    "example_module"
+    "trio_main;example_module;example_module/example_submodule"
 )
 
-include(srcMC464/IncludeModules.cmake)
-add_modules(${MODULE_PATHS})
+add_subdirectory(srcMC464)
 

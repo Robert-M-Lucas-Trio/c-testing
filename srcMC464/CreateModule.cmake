@@ -1,20 +1,30 @@
 cmake_minimum_required(VERSION 3.13)
 
-function(create_module module_name source_files dependencies)
+macro(create_module module_name source_files dependencies)
+    set(DEPENDENCIES ${dependencies} PARENT_SCOPE)
+
     set(PREFIXED_SOURCES "")
     foreach(src ${source_files})
         list(APPEND PREFIXED_SOURCES "src/${src}")
     endforeach()
 
-    add_library(${module_name} STATIC ${PREFIXED_SOURCES})
+    string(REPLACE "/" "___" escaped_module_name "${module_name}")
 
-    target_include_directories(trio_main
+    add_library(${escaped_module_name} STATIC ${PREFIXED_SOURCES})
+
+    get_filename_component(config_file_dir ${CONFIG_FILE} DIRECTORY)
+    get_filename_component(config_file_name ${CONFIG_FILE} NAME)
+
+    target_include_directories(${escaped_module_name}
         PUBLIC
             ${CMAKE_CURRENT_SOURCE_DIR}/public
         PRIVATE
             ${CMAKE_CURRENT_SOURCE_DIR}/public/${module_name}
             ${CMAKE_CURRENT_SOURCE_DIR}/private
+            ${config_file_dir}
     )
 
-    set(DEPENDENCIES ${dependencies} PARENT_SCOPE)
-endfunction()
+    target_compile_options(${escaped_module_name} PRIVATE
+        -include ${config_file_name}
+    )
+endmacro()
