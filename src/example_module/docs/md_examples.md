@@ -216,3 +216,6 @@ graph TD;
     B-->D;
     C-->D;
 ```
+
+> *While Obsidian / Github / Gitlab can render these, an external tool may need to be used to create/edit complex diagrams*
+
