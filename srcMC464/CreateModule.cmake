@@ -9,9 +9,21 @@ macro(create_module module_name source_files dependencies)
     endforeach()
 
     string(REPLACE "/" "___" escaped_module_name "${module_name}")
+    
+    
+    file(GLOB_RECURSE PUBLIC_HEADERS
+          "${CMAKE_CURRENT_SOURCE_DIR}/public/*.h"
+    )
+    file(GLOB_RECURSE PRIVATE_HEADERS
+          "${CMAKE_CURRENT_SOURCE_DIR}/private/*.h"
+    )
+
 
     add_library(${escaped_module_name} STATIC 
         ${PREFIXED_SOURCES}
+        
+        ${PUBLIC_HEADERS}
+        ${PRIVATE_HEADERS}
     )
 
     get_filename_component(config_file_dir ${CONFIG_FILE} DIRECTORY)
