@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "examplemodule.h": "c",
-        "internaltoexamplemodule.h": "c"
+        "internaltoexamplemodule.h": "c",
+        "stdio.h": "c"
     }
 }
