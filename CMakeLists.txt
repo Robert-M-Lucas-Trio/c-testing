@@ -8,6 +8,7 @@ add_executable(my_project
     main.c
 )
 
+# Add config.h
 target_include_directories(my_project PRIVATE config)
 set(CONFIG_FILE config.h)
 target_compile_options(my_project PRIVATE
@@ -20,4 +21,5 @@ set(MODULE_PATHS
 )
 
 include(srcMC464/IncludeModules.cmake)
+add_modules(${MODULE_PATHS})
 

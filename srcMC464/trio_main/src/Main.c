@@ -1,4 +1,4 @@
-#include "trio_main/Main.h"
+#include "Main.h"
 
 #include "example_module/ExampleModule.h"
 
