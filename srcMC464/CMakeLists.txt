@@ -38,6 +38,7 @@ while(len GREATER index)
     if (export_module)
         string(REPLACE "/" "___" escaped_module_name "${module_path}")
         message(STATUS "Exporting ${escaped_module_name}")
+        # target_include_directories(my_project PRIVATE "${module_path}/public")
         target_link_libraries(my_project PUBLIC ${escaped_module_name})
     endif()
     
@@ -76,6 +77,8 @@ foreach(item IN LISTS INTERDEPENDENCIES)
     list(GET item 1 link_from)
 
     string(REPLACE "/" "___" escaped_link_from "${link_from}")
+
     message(STATUS "Linking ${escaped_link_from} -> ${link_to}")
+    # target_include_directories(${link_to} PRIVATE "${link_from}/public")
     target_link_libraries(${link_to} PRIVATE ${escaped_link_from})
 endforeach()

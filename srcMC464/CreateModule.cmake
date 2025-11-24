@@ -31,7 +31,7 @@ macro(create_module module_name source_files dependencies)
 
     target_include_directories(${escaped_module_name}
         PUBLIC
-            ${CMAKE_CURRENT_SOURCE_DIR}/public/${module_name}
+            ${CMAKE_CURRENT_BINARY_DIR}/public
         PRIVATE
             ${CMAKE_CURRENT_SOURCE_DIR}/public
             ${CMAKE_CURRENT_SOURCE_DIR}/private
