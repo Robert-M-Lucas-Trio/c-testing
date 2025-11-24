@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "example/public/ExampleModule.h"
+#include "example_module/public/ExampleModule.h"
 
 int main() {
     printf("Hello, CMake!\n");

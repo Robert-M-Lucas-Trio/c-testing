@@ -1,4 +1,4 @@
 # c-testing
 
 # Modules
-- [Example Module](src/example/docs/Example%20Module.md)
+- [Example Module](src/example_module/docs/example_module.md)
