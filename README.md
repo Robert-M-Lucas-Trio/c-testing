@@ -1,6 +1,6 @@
 # c-testing
 
-# Modules
+# Modules (MD test)
 - [Example Module](src/example_module/docs/example_module.md)
 
 # Explaination

@@ -31,9 +31,9 @@ macro(create_module module_name source_files dependencies)
 
     target_include_directories(${escaped_module_name}
         PUBLIC
-            ${CMAKE_CURRENT_BINARY_DIR}/public
-        PRIVATE
             ${CMAKE_CURRENT_SOURCE_DIR}/public
+        PRIVATE
+            ${CMAKE_CURRENT_SOURCE_DIR}/public/${module_name}
             ${CMAKE_CURRENT_SOURCE_DIR}/private
             ${config_file_dir}
     )
@@ -42,18 +42,16 @@ macro(create_module module_name source_files dependencies)
         -include ${config_file_name}
     )
 
+    # get_filename_component(parent_mod_dir "${CMAKE_CURRENT_BINARY_DIR}/public/${module_name}" DIRECTORY)
 
-    set(PUBLIC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/public")
-    set(MOD_DIR "${CMAKE_CURRENT_BINARY_DIR}/public/${module_name}")
+    # # Copy all files from public to public/module_name at build time
+    # add_custom_target("copy_public_${escaped_module_name}" ALL
+    #     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_CURRENT_BINARY_DIR}/public
+    #     COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/public
+    #     COMMAND ${CMAKE_COMMAND} -E make_directory ${parent_mod_dir}
+    #     COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/public ${CMAKE_CURRENT_BINARY_DIR}/public/${module_name} 
+    #     COMMENT "Creating symlinks ${CMAKE_CURRENT_BINARY_DIR}/public/${module_name} -> ${CMAKE_CURRENT_SOURCE_DIR}/public" 
+    # )
 
-    # Copy all files from public to public/module_name at build time
-    add_custom_target("copy_public_${escaped_module_name}" ALL
-        COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_CURRENT_BINARY_DIR}/public
-        COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/public
-        COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/public/${module_name}
-        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/public ${CMAKE_CURRENT_BINARY_DIR}/public/${module_name}
-        COMMENT "Copying public headers to mod directory"
-    )
-
-    add_dependencies(${escaped_module_name} "copy_public_${escaped_module_name}")
+    # add_dependencies(${escaped_module_name} "copy_public_${escaped_module_name}")
 endmacro()
