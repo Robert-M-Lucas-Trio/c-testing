@@ -185,13 +185,22 @@
   },
   "active": "fbb76b115f42cac9",
   "lastOpenFiles": [
+    "build/CMakeFiles/my_project.dir/link.d",
+    "build/my_project",
+    "build/CMakeFiles/my_project.dir/src/example_module/src/ExampleModule.c.o.d",
+    "build/CMakeFiles/my_project.dir/src/main.c.o.d",
+    "build/CMakeFiles/my_project.dir/src/example_module/src/InternalToExampleModule.c.o.d",
+    "build/build.ninja.tmp8dc26",
+    "build/CMakeCache.txt.tmpac1b3",
+    "build/build.ninja.tmpdda90",
+    "build/CMakeFiles/rules.ninja.tmp2e7c7",
+    "build/build.ninja.tmpe7a85",
+    "build/CMakeFiles/MyProject.dir/link.d",
     "src/example_module/docs/example_module.md",
-    "src/example_module/tests",
     "src/example_module/docs/md_examples.md",
     "src/example_module/docs/attachments/Pasted image 20251121154531.png",
     "README.md",
     "src/example/docs/Example Module.md",
-    "src/example/docs/attachments/Pasted image 20251121154531.png",
-    "src/example/docs/attachments"
+    "src/example/docs/attachments/Pasted image 20251121154531.png"
   ]
 }

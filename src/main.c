@@ -3,6 +3,6 @@
 #include "example_module/public/ExampleModule.h"
 
 int main() {
-    printf("Hello, CMake!\n");
+    function_to_do_something();
     return 0;
 }

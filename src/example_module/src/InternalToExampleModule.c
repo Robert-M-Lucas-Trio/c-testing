@@ -1,1 +1,5 @@
-#include "InternalToExampleModule.h"
+#include "../private/InternalToExampleModule.h"
+
+InternalData get_data(void) {
+    return (InternalData) { .x = 7 };
+}
