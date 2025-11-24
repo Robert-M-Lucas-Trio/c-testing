@@ -16,3 +16,8 @@
 
 # Questions
 - Is this insane (does it tie us to CMake too much?)
+- Is the usability ok
+
+# TODO
+- Add an example of board-specific module behaviour
+
