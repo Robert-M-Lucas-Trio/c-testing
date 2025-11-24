@@ -10,7 +10,9 @@ macro(create_module module_name source_files dependencies)
 
     string(REPLACE "/" "___" escaped_module_name "${module_name}")
 
-    add_library(${escaped_module_name} STATIC ${PREFIXED_SOURCES})
+    add_library(${escaped_module_name} STATIC 
+        ${PREFIXED_SOURCES}
+    )
 
     get_filename_component(config_file_dir ${CONFIG_FILE} DIRECTORY)
     get_filename_component(config_file_name ${CONFIG_FILE} NAME)

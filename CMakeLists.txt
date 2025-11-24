@@ -15,9 +15,9 @@ target_compile_options(my_project PRIVATE
     -include ${CONFIG_FILE}
 )
 
+# Add modules
 set(MODULE_PATHS
-    "trio_main;example_module;example_module/example_submodule"
+    "trio_main"
 )
-
 add_subdirectory(srcMC464)
 
