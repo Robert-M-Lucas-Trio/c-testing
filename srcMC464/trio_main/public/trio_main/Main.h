@@ -1,6 +1,3 @@
-#ifndef EXAMPLE_MODULE_H
-#define EXAMPLE_MODULE_H
+#pragma once
 
 int trio_main(void);
-
-#endif

@@ -1,4 +1,4 @@
-add_library(example_module OBJECT
+add_library(example_module STATIC
     src/ExampleModule.c
     src/InternalToExampleModule.c
 )

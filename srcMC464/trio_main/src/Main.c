@@ -1,8 +1,8 @@
+#include "trio_main/Main.h"
+
 #include "example_module/ExampleModule.h"
 
-#include <stdio.h>
-
 int trio_main(void) {
+    function_to_do_something();
     return 0;
 }
-

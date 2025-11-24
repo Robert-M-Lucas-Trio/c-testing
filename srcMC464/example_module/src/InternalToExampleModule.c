@@ -1,5 +1,5 @@
 #include "InternalToExampleModule.h"
 
 InternalData get_data(void) {
-    return (InternalData) { .x = 7 };
+    return (InternalData) { .x = CORES };
 }
