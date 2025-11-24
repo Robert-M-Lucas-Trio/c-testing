@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/example/docs/Example Module.md",
+                "file": "src/example_module/docs/md_examples.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Example Module"
+              "title": "md_examples"
             }
           }
         ]
@@ -185,6 +185,10 @@
   },
   "active": "fbb76b115f42cac9",
   "lastOpenFiles": [
+    "src/example_module/docs/example_module.md",
+    "src/example_module/tests",
+    "src/example_module/docs/md_examples.md",
+    "src/example_module/docs/attachments/Pasted image 20251121154531.png",
     "README.md",
     "src/example/docs/Example Module.md",
     "src/example/docs/attachments/Pasted image 20251121154531.png",

@@ -173,22 +173,8 @@ Here is a footnote reference[^1].
 
 ---
 
-## 14. Collapsible Sections
-```markdown
-<details>
-<summary>Click to expand</summary>
-
-Hidden content here.
-
-</details>
-```
-
-<details>
-<summary>Click to expand</summary>
-
-Hidden content here.
-
-</details>
+## 14. Links
+[example_module](example_module.md)
 
 ---
 
@@ -221,3 +207,12 @@ $$E = mc^2$$
 
 > [!CAUTION]
 > This is a caution. Advises careful handling or attention.
+
+## 18. Mermaid
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
