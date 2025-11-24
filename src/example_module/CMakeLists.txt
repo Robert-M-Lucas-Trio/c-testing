@@ -1,6 +1,12 @@
-set(EXAMPLE_SOURCE_FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ExampleModule.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/InternalToExampleModule.c
+add_library(example_module
+    src/ExampleModule.c
+    src/InternalToExampleModule.c
 )
 
-target_sources(my_project PRIVATE ${EXAMPLE_SOURCE_FILES})
+
+target_include_directories(example_module
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/public
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/private
+)

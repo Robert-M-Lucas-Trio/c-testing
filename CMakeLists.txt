@@ -7,3 +7,4 @@ add_executable(my_project
 ) 
 
 add_subdirectory(src/example_module)
+target_link_libraries(my_project PRIVATE example_module) 

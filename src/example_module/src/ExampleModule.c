@@ -1,8 +1,8 @@
-#include "../public/ExampleModule.h"
+#include "example_module/ExampleModule.h"
 
 #include <stdio.h>
 
-#include "../private/InternalToExampleModule.h"
+#include "InternalToExampleModule.h"
 
 
 void function_to_do_something(void) {

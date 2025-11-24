@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "example_module/public/ExampleModule.h"
+#include "example_module/ExampleModule.h"
 
 int main() {
     function_to_do_something();
