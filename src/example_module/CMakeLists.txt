@@ -3,6 +3,7 @@ add_library(example_module
     src/InternalToExampleModule.c
 )
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 target_include_directories(example_module
     PUBLIC
