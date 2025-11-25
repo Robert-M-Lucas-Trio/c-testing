@@ -16,7 +16,8 @@
     - It also builds their dependencies but doesn't expose them outside of srcMC464
     - It shouldn't need to be changed
 - The CMakeLists.txt in each module defines the files to be built, and which other modules it depends on
-    - This is where C files could be conditionally not included
+    - This is where C files could be conditionally included / performance options set / etc.
+    - Each module is a static library
 - The config/config.h file is the globally included header
 
 # Results
