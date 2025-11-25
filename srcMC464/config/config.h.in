@@ -1,0 +1,5 @@
+// Template for globally included config.h
+
+#define OPT_FEATURE_A @OPT_FEATURE_A@
+#define OPT_FEATURE_B @OPT_FEATURE_B@
+#cmakedefine OPT_FEATURE_C @OPT_FEATURE_C@

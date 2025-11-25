@@ -1,5 +1,37 @@
 cmake_minimum_required(VERSION 3.13)
 
+# --------- Check/Set Options ---------
+
+set(DEFAULT_FEATURES
+    OPT_FEATURE_A
+    OPT_FEATURE_B
+)
+
+set(DEFAULT_OPT_FEATURE_A ON)
+set(DEFAULT_OPT_FEATURE_B OFF)
+
+# For each option set default
+foreach(opt ${REQUIRED_OPTIONS})
+    if(NOT DEFINED ${opt})
+        set(${opt} ${DEFAULT_${opt}})
+    endif()
+endforeach()
+
+# Create config.h
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/config.h.in
+    ${CMAKE_CURRENT_BINARY_DIR}/config/config.h
+)
+
+# Add config.h
+target_include_directories(target PRIVATE config)
+get_filename_component(CONFIG_FILE "${CMAKE_CURRENT_BINARY_DIR}/config/config.h" ABSOLUTE)
+target_compile_options(target PRIVATE
+    -include ${CONFIG_FILE}
+)
+
+# ------------ Add Modules ------------
+
 if (NOT DEFINED MODULE_PATHS)
     message(FATAL_ERROR "MODULE_PATHS not set")
 endif()
@@ -37,8 +69,8 @@ while(len GREATER index)
     # Export
     if (export_module)
         string(REPLACE "/" "___" escaped_module_name "${module_path}")
-        message(STATUS "Exporting ${escaped_module_name}")
-        target_link_libraries(my_project PUBLIC ${escaped_module_name})
+        message(STATUS "Exporting ${escaped_module_name} -> target")
+        target_link_libraries(target PUBLIC ${escaped_module_name})
     endif()
     
     # Handle dependencies
@@ -51,7 +83,7 @@ while(len GREATER index)
         foreach (module_path IN LISTS ALL_MODULE_PATHS)
             string(REGEX MATCH "!$" export_module "${module_path}")
             if (export_module)
-                string(LENGTH "${my_string}" str_len)
+                string(LENGTH "${module_path}" str_len)
                 math(EXPR new_len "${str_len} - 1")
                 string(SUBSTRING "${module_path}" 0 ${new_len} module_path)
             endif()
