@@ -17,6 +17,8 @@ include(srcMC464/BaseConfig.cmake)
 include(config.cmake)
 
 # -- Add modules
-set(MODULE_PATHS "trio_main")
+set(MODULE_PATHS 
+    trio_main
+)
 add_subdirectory(srcMC464)
 
