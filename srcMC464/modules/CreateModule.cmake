@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 macro(create_module module_name source_files dependencies)
+    # Export dependencies
     set(DEPENDENCIES ${dependencies} PARENT_SCOPE)
 
     set(PREFIXED_SOURCES "")
@@ -10,7 +11,7 @@ macro(create_module module_name source_files dependencies)
 
     string(REPLACE "/" "___" escaped_module_name "${module_name}")
     
-    
+    # Get headers that should be visible to IDEs
     file(GLOB_RECURSE PUBLIC_HEADERS
           "${CMAKE_CURRENT_SOURCE_DIR}/public/*.h"
     )
@@ -26,6 +27,7 @@ macro(create_module module_name source_files dependencies)
         ${PRIVATE_HEADERS}
     )
 
+    # Add config file
     get_filename_component(config_file_dir ${CONFIG_FILE} DIRECTORY)
     get_filename_component(config_file_name ${CONFIG_FILE} NAME)
 
@@ -41,17 +43,4 @@ macro(create_module module_name source_files dependencies)
     target_compile_options(${escaped_module_name} PRIVATE
         -include ${config_file_name}
     )
-
-    # get_filename_component(parent_mod_dir "${CMAKE_CURRENT_BINARY_DIR}/public/${module_name}" DIRECTORY)
-
-    # # Copy all files from public to public/module_name at build time
-    # add_custom_target("copy_public_${escaped_module_name}" ALL
-    #     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_CURRENT_BINARY_DIR}/public
-    #     COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/public
-    #     COMMAND ${CMAKE_COMMAND} -E make_directory ${parent_mod_dir}
-    #     COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/public ${CMAKE_CURRENT_BINARY_DIR}/public/${module_name} 
-    #     COMMENT "Creating symlinks ${CMAKE_CURRENT_BINARY_DIR}/public/${module_name} -> ${CMAKE_CURRENT_SOURCE_DIR}/public" 
-    # )
-
-    # add_dependencies(${escaped_module_name} "copy_public_${escaped_module_name}")
 endmacro()
