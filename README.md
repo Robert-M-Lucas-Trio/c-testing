@@ -14,14 +14,17 @@
 - The CMakeLists.txt outside of srcMC464 chooses the modules it wants available to it
 - The CMakeLists.txt inside srcMC464 builds those modules
     - It also builds their dependencies but doesn't expose them outside of srcMC464
+    - It shouldn't need to be changed
 - The CMakeLists.txt in each module defines the files to be built, and which other modules it depends on
     - This is where C files could be conditionally not included
 - The config/config.h file is the globally included header
 
 # Results
-- In each module, only the modules it depends on are available to it - this includes outside of srcMC464 where only trio_main is available, despite trio_main, example_module, and example_module/example_submodule being built
+- In each module, only the modules it depends on are available to it
+    - Outside of srcMC464 where only trio_main is available, despite trio_main, example_module, and example_module/example_submodule being built
+    - In example_module, example_module/example_submodule is not available despite it being built
 - Inside a module, the headers in private and public are available, whereas from other modules only public headers are available
 
-# Questions
+# ?
 - Is this insane (does it tie us to CMake too much?)
 - Is the usability ok
