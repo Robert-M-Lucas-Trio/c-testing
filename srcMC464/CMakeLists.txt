@@ -1,35 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
 
-# --------- Check/Set Options ---------
-
-set(DEFAULT_FEATURES
-    OPT_FEATURE_A
-    OPT_FEATURE_B
-)
-
-set(DEFAULT_OPT_FEATURE_A ON)
-set(DEFAULT_OPT_FEATURE_B OFF)
-
-# For each option set default
-foreach(opt ${REQUIRED_OPTIONS})
-    if(NOT DEFINED ${opt})
-        set(${opt} ${DEFAULT_${opt}})
-    endif()
-endforeach()
-
-# Create config.h
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/config/config.h.in
-    ${CMAKE_CURRENT_BINARY_DIR}/config/config.h
-)
-
-# Add config.h
-target_include_directories(target PRIVATE config)
-get_filename_component(CONFIG_FILE "${CMAKE_CURRENT_BINARY_DIR}/config/config.h" ABSOLUTE)
-target_compile_options(target PRIVATE
-    -include ${CONFIG_FILE}
-)
-
 # ------------ Add Modules ------------
 
 if (NOT DEFINED MODULE_PATHS)
