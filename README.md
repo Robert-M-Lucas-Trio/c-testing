@@ -2,6 +2,8 @@
 
 # Modules (MD test)
 - [Example Module](src/example_module/docs/example_module.md)
+	- [Example Submodule](srcMC464/modules/example_module/example_submodule/docs/example_submodule.md)
+- [Trio Main](srcMC464/modules/trio_main/docs/trio_main.md)
 
 # Explaination
 - All the files outside srcMC464 would be the files for the Linux port / simulator / flex-7 / individual boards
