@@ -3,6 +3,9 @@
 #include "example_module/ExampleModule.h"
 #include "example_module/example_submodule/ExampleSubmodule.h"
 
+/*
+* Hello
+*/
 int trio_main(void) {
     function_to_do_something();
     fs2();

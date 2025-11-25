@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "srcMC464/modules/example_module/docs/md_examples.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "md_examples"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/example/docs/Example Module.md",
+                "file": "srcMC464/modules/example_module/docs/md_examples.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Example Module"
+              "title": "Backlinks for md_examples"
             }
           },
           {
@@ -185,8 +185,8 @@
   },
   "active": "fbb76b115f42cac9",
   "lastOpenFiles": [
-    "srcMC464/modules/trio_main/docs/trio_main.md",
     "README.md",
+    "srcMC464/modules/trio_main/docs/trio_main.md",
     "srcMC464/modules/example_module/example_submodule/docs/example_submodule.md",
     "src/example_module/docs/md_examples.md",
     "build/CMakeCache.txt.tmp6cd0e",

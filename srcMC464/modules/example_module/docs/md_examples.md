@@ -9,7 +9,6 @@
 ##### H5
 ###### H6
 ```
-
 # H1  
 ## H2  
 ### H3  
@@ -217,5 +216,5 @@ graph TD;
     C-->D;
 ```
 
-> *While Obsidian / Github / Gitlab can render these, an external tool may need to be used to create/edit complex diagrams*
+> *While Obsidian / Github / Gitlab can render these, an external tool may be useful to create/edit complex diagrams*
 
